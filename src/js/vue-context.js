@@ -26,6 +26,10 @@ export default {
             type: Boolean,
             default: true
         },
+        closeOnClickAway: {
+            type: Boolean,
+            default: true
+        },
         lazy: {
             type: Boolean,
             default: false
@@ -375,6 +379,7 @@ export default {
 
         // Only register the directives we need
         const directives = [
+            this.closeOnClickAway &&
             {
                 name: 'on-clickaway',
                 value: this.close,
