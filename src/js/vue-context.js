@@ -378,14 +378,15 @@ export default {
         }
 
         // Only register the directives we need
-        const directives = [
-            this.closeOnClickAway &&
-            {
+        const directives = [];
+        
+        if (this.closeOnClickAway) {
+            directives.push({
                 name: 'on-clickaway',
                 value: this.close,
                 rawName: 'v-on-clickaway'
-            }
-        ];
+            });
+        }
 
         if (! this.lazy) {
             directives.push({
